@@ -1,0 +1,333 @@
+@import url(otrahoja.css);
+/* son mala practica por que son bloqueantes a la hora que el 
+navegador lee esta instruccion */
+
+h1{
+    color: red;
+    background-color: black;
+}
+
+/* Selectores Básicos
+1) Etiquetas -elementos html
+2) Identificadores - atributo id - #
+3) Clases - class   .
+
+*/
+
+p{
+    color: midnightblue;
+}
+
+#parrafo-dos{
+    background-color: skyblue;
+}
+
+/* Dar estilos con clases nos permite reutilizar nuestro codigo CSS*/
+
+.bg-skyblue{
+    background-color: skyblue;
+}
+
+.bg-steelblue{
+    background-color: steelblue;
+}
+
+.text-20{
+    font-size: 20px;
+}
+
+.text-32{
+    font-size: 32px;
+}
+
+.text-white{
+    color: white;
+}
+
+
+.hijos-directos > li {
+    background-color: thistle;
+}
+
+
+.hijos-descendientes b{
+    background-color: thistle;
+}
+
+
+/* los selectores de hermanos van a aplicar a los elementos que son hermanos y que esten 
+por debajo del elemento de referencia */
+.hermanos-general ~ li{
+    background-color: thistle;
+}
+
+.hermanos-adyacentes + li{
+    background-color: thistle;
+}
+
+/*Selectores de atributos*/
+.selectores-atributos a[href]{
+    color: orangered;
+
+}
+.selectores-atributos a[target="_blank"]{
+    font-weight: bold;
+}
+
+/* el comodin del * aplica el estilo si contiene el texto en cualquier parte */
+.selectores-atributos a[href*="jonmircha"]{
+    font-size: 40px;
+    
+}
+
+/* el comodin del ^ aplica el estilo si contiene el texto al inicio */
+.selectores-atributos a[href^="http://"]{
+    text-decoration: none;
+}
+
+/*el comodin del $ aplica el estilo si contiene el texto al final */
+.selectores-atributos a[href$=".com"]{
+    background-color: black;
+}
+
+
+/* ~ usado en clases, para que se aplique si contiene tal texto como clase*/
+.selectores-atributos a[class~="cursos"]{
+    background-color: midnightblue;
+}
+
+/* se usa | para indicar sobre un guion medio*/
+
+.selectores-atributos a[class|=menu]{
+    font-style: italic;
+}
+
+/* Selector Universal */
+
+*{
+    font-family: sans-serif;
+}
+
+.selector-universal *{
+    font-size: 50px;
+}
+
+/* Pseudoclases - Dan estilos dependiendo de contexto, posicion, estado */
+
+.form-pseudoclases *:required{
+    border-color: yellow;
+}
+
+.form-pseudoclases *:valid{
+    border-color: green;
+}
+.form-pseudoclases *:invalid{
+    border-color: red;
+}
+
+.form-pseudoclases *:focus{
+    background-color: skyblue;
+}
+
+.form-pseudoclases *:disabled{
+    background-color: pink;
+}
+
+
+.menu-pseudoclases a:visited{
+    color: olive;
+}
+
+.menu-pseudoclases a:hover{
+    color: ORANGE;
+}
+
+.p-pseudoclases:hover{
+    font-size: 30px;
+}
+
+#temario-css:target{
+    background-color: lightgreen;
+}
+
+.lista-pseudoclases li:first-child{
+    color: green;
+
+}
+
+.lista-pseudoclases li:last-child{
+    color: violet;
+
+}
+
+.lista-pseudoclases li:nth-child(3){
+    color: navy;
+
+}
+
+.lista-pseudoclases li:nth-child(4n){
+    font-size: 30px;
+}
+
+.lista-pseudoclases li:nth-child(3n+1){
+    font-weight: bold;
+}
+
+.lista-pseudoclases li:nth-child(even){
+    background-color: yellow;
+}
+.lista-pseudoclases li:nth-child(odd){
+    background-color: orange;
+}
+
+.articulo-pseudoclases p:first-of-type{
+    background-color: pink;
+
+}
+
+.articulo-pseudoclases p:last-of-type{
+    background-color: pink;
+
+}
+
+.articulo-pseudoclases p:nth-of-type(3){
+    background-color: fuchsia;
+}
+
+
+.articulo-pseudoclases *:not(p){
+    background-color: beige;
+}
+
+.saga-geminis::before{
+    content: "👬";
+}
+
+.saga-geminis::after{
+    content: "♊";
+}
+
+.saga-precio::before{
+    content: " $";
+    font-weight: bold;
+}
+
+.saga-precio::after{
+    content: "USD";
+    font-weight: bold;
+}
+
+.p-pseudoelementos::first-letter{
+    font-weight: bold;
+    font-size: 32px;
+
+}
+
+.p-pseudoelementos::first-line{
+    color: coral;
+}
+
+.p-pseudoelementos::selection{
+    background-color: black;
+    color: greenyellow;
+}
+
+.input-pseudoelementos::placeholder{
+    color: green;
+}
+
+
+/* Agrupar selectores */
+
+.form-agrupar-selectores input[type="text"],
+.form-agrupar-selectores input[type="email"],
+.form-agrupar-selectores textarea{
+    border-color: yellow;
+    border-width: 2px;
+    border-style: dashed;
+    background-color: black;
+    font-size: 20px;
+    display: block;
+    width: 300px;
+}
+
+/*El algoritmo de CSS es la forma en la cual el navegador
+aplica los estilos en el documento HTML.
+Es vital conocer esto para entender como se aplica y en que ocasiones
+se sobreescriben las reglas CSS 
+1) La cascada
+2) La especificidad
+3)La herencia
+*/
+
+
+
+/*Especificidad 
+
+Etiquetas y ´pseudoelementos ............ 0,0,0,1
+Clases,atributos y pseudoclases ........ 0,0,1,0
+Identificadores ........................ 0,1,0,0
+Estilos en Línea ....................... 1,0,0,0
+!important ............................. Rompe la especificidad
+
+*/
+
+blockquote#cita-marco.cita-marco{
+    background-color: lightsteelblue;
+}
+
+blockquote{
+    background-color: burlywood;
+}
+
+
+#cita-marco{
+    background-color: lightgreen;
+}
+
+blockquote.cita-marco{
+    background-color: tomato;
+}
+.cita-marco{
+    background-color: cornflowerblue;
+}
+
+
+.cita-marco{
+    background-color: mediumaquamarine !important;
+}
+
+
+blockquote#cita-marco{
+    background-color: lightsalmon;
+}
+
+
+.cita-marco{
+    background-color: moccasin !important;
+    background-color: darkorange !important;
+    font-size: 32px;
+    border-style: dotted;
+    border-color: red;
+}
+
+
+.cita-marco cite{
+    background-color: pink;
+   background-color: inherit;
+   font-size: 24px;
+   font-size: initial;
+   border-style: inherit;
+   border-color: inherit;
+    
+}
+
+/* Prefijos de los navegadores
+
+https://autoprefixer.github.io/
+https://caniuse.com/
+
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+ user-select: none; */
