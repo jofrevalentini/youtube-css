@@ -111,8 +111,133 @@ a lo ancho, generando saltos de linea
 
 .caja-bloque{
     margin: 32px;
+    display: block;
+    display: inline;
 }
 
 .caja-linea{
     margin: 48px;
+    display: inline;
+    display: block;
+}
+
+/*
+Propiedad Display
+
+inline
+block
+inline-block - Se comporta como un elemento de linea
+pero acepta modificaciones en alto y ancho
+none
+table
+list-item
+flex 
+grid
+
+*/
+
+.caja-none,
+.caja-linea-bloque,
+.caja-hidden{
+    background-color: darkolivegreen;
+    color: white;
+    width: 600px;
+    height: 300px;
+    border: medium solid black;
+    
+}
+
+.caja-linea-bloque{
+    display: inline-block;
+}
+
+.caja-none{
+    display: none;
+}
+
+.caja-hidden{
+    visibility: hidden;
+}
+
+.overflow{
+    background-color: darkturquoise;
+    width: 200px;
+    height: 100px;
+    overflow: visible;
+    overflow: hidden;
+    overflow: scroll;
+    
+    /* overflow-y: scroll; */
+    /* overflow-x: scroll ; */
+
+}
+
+/*
+Tamaño de caja
+*/
+
+.box-sizing-content,
+.box-sizing-border{
+    box-sizing: content-box;
+    background-color: deepskyblue;
+    width: 500px;
+    height: 250px;
+    padding: 10px;
+    /* w 500 +10 der  + 10 izq = 520
+    h 250 + 10 + 10 = 270 */
+    border: thick solid black;
+
+}
+
+
+.box-sizing-border{
+    box-sizing: border-box;
+}
+
+
+
+
+.container-col-3{
+    background: burlywood;
+    width: 600px;
+    height: 300px;
+    margin-top: 20px;
+}
+
+
+.container-col-3 > *{
+    box-sizing: border-box;
+    width: 200px;
+    border: thin solid red;
+    float: left;
+
+}
+
+
+
+html{
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after{
+    box-sizing: inherit;
+}
+
+
+.container-float{
+    background-color:cornflowerblue ;
+}
+
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.clear-fix{
+    clear: both;
 }
