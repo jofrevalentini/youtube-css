@@ -1,0 +1,136 @@
+.color-by-name{
+    background-color: coral;
+    color: rebeccapurple;
+    border: thick solid greenyellow;
+}
+
+/*
+Sistema Hexadecimal
+0123456789ABCDEF
+
+RGB(Medios Digitales) vs CMYK (Medios Impresos)
+
+Colores en HEX va a ser colores  de 6 digitos
+2 de RED  , 2 de GREEN , 2 de  Blue
+#FF6600
+*/
+
+.color-hex{
+    background-color: #ff6600;
+    background-color: #f60;
+    background-color: #ff6605;
+    background-color: #00000000;
+    background-color: #00000055;
+    background-color: #0003;
+    color: #12ac78;
+    border: thick solid #ffffff;
+    border: thick solid #fff;
+    border: thick solid #ff0000;
+    border: thick solid #f00;
+    border: thick solid #00ff00;
+    border: thick solid #0f0;
+    border: thick solid #0000ff;
+    border: thick solid #00f;
+    border: thick solid #000000;
+    border: thick solid #000;
+    
+}
+
+
+/* 
+Sistema RGB
+
+Acepta 8 bits por canal
+Bit (0/1) 2 elevado a la potencia 8 = 2*2*2*2*2*2*2*2=256
+por cada canal de color tenemos valores que van 0 al -255
+*/
+.color-rgb{
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 255);
+    background-color: rgb(0, 0, 0);
+    background-color: rgb(0, 0, 0,.92);
+    color: rgb(255, 102, 0);
+    border: thick solid rgb(128, 109, 7);
+
+    
+}
+
+
+/*
+
+Sistema HSL
+Hue Saturation Lightness (Tono-Saturacion-Luminosidad
+
+El primer es HUE ( Circulo cromático)
+0 grados -> red
+60grados -> yellow
+120 grados -> green
+180 grados -> cryan
+240 grados -> azul
+300 grados -> magenta
+
+El segundo valor es saturation(intensidad del color)
+0% -> Escala de grises
+100% -> color puro
+
+El tercer valor es lightness( luminosidad)
+0% negro
+100% blanco
+
+
+*/
+
+.color-hsl{
+    background-color: hsl(0, 100%, 50%);
+    background-color: hsl(120, 100%, 50%);
+    background-color: hsl(240, 100%, 50%);
+    background-color: hsl(30, 100%, 50%);
+    background-color: hsl(30, 100%, 50%,.5);
+    background-color: hsl(30, 100%, 50%,.25);
+    background-color: hsl(30, 100%, 50%,0);
+    background-color: hsl(30, 100%, 50%,.75);
+    color: hsl(0, 0%, 0%);
+    border: thick solid hsl(210, 75% , 65%);
+    
+}
+
+/*
+Valor transparent: color transparente es igual a aplicar rgba(0,0,0,0)
+Valor currentColor: Hereda el valor por defecto o asignado de la propiedad color,
+del ancestro que tenga definida esta propiedad, busca del ancestro mas cercano
+al mas alejado
+
+*/
+.color-transparent-current{
+    background-color: darkmagenta;
+    background-color: currentColor;
+    background-color: transparent;
+    color: olive;
+    border: thin solid currentColor;
+}
+
+.opacity{
+    background-color: orchid;
+    color: navy;
+    border: thick solid black;
+    opacity: .75;
+}
+
+
+.opacity-00{
+    opacity: 0;
+}
+
+.opacity-10{
+    opacity: 1;
+}
+
+.opacity-20{
+    opacity: 0.2;
+}
+
+.opacity-30{
+    opacity: 0.3;
+}

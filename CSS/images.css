@@ -1,0 +1,34 @@
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.card{
+    border: medium solid black;
+    width: 400px;
+    height: 400px;
+}
+
+.card img{
+    background-color: yellowgreen;
+    height: 300px;
+    /* object-fit: cover; */
+    /* object-fit: contain; */
+    /* object-fit: scale-down; */
+    /* object-position: left top; */
+    /* object-fit: contain; */
+    /* object-fit: none; */
+    /* object-fit: scale-down; */
+    /* object-position: 50% 50%;
+    object-position: left top;
+    object-position: 50% 50%;
+    object-position: right bottom;
+    object-position: left top;
+    object-position: 50% 50%;
+    object-position: -50px center;
+    object-position: 50% 50%; */
+    object-fit: none;
+    
+    
+}
